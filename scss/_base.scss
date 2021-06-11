@@ -1,11 +1,13 @@
 // google font
-@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
 // variables
 $primary: #4f2ab8;
 $secondary: #ff8941;
 $tertiary: #ff524b;
 $neumorph: #ecf0f3;
+$shadow: #cbced1;
+$content: #16141f;
 
 // base styles
 * {
@@ -15,7 +17,7 @@ $neumorph: #ecf0f3;
 }
 
 body {
-   font-family: "Work Sans", sans-serif;
+   font-family: "Poppins", sans-serif;
    background-color: black;
 }
 
@@ -41,5 +43,5 @@ body {
 // Utility class : .current
 .current {
    border: 1px solid $neumorph;
-   box-shadow: inset 5px 5px 8px #cbced1, inset -5px -5px 8px #ffffff;
+   box-shadow: inset 5px 5px 8px $shadow, inset -5px -5px 8px white;
 }

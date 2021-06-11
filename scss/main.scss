@@ -5,9 +5,11 @@
    height: 100vh;
    display: grid;
    grid-template-columns: 0.5fr 4fr 1.5fr;
+   grid-template-areas: "navbar main aside";
 }
 
 .navbar {
+   grid-area: navbar;
    display: grid;
    grid-template-columns: 1fr;
    grid-template-rows: repeat(8, 1fr);
@@ -15,26 +17,26 @@
    background-color: $neumorph;
 
    &-logo {
-      width: 4rem;
-      height: 4rem;
+      width: 3.5rem;
+      height: 3.5rem;
       grid-row: 1 / 3;
       align-self: start;
       margin-top: 2rem;
       @include flexManagement;
       border: 1px solid $neumorph;
       border-radius: 7px;
-      box-shadow: 5px 5px 10px 3px #cbced1, -5px -5px 10px 3px #ffffff;
+      box-shadow: 5px 5px 10px 3px $shadow, -5px -5px 10px 3px white;
 
       p {
-         font-weight: bold;
-         font-size: 2.75rem;
+         font-weight: bolder;
+         font-size: 2.25rem;
          color: $secondary;
       }
    }
 
    &-button {
       @include buttonStyles;
-      font-size: 1rem;
+      font-size: 0.8rem;
    }
 
    &-button-filter {
@@ -52,9 +54,141 @@
 }
 
 .main-section {
-   background-color: coral;
+   grid-area: main;
+   max-height: 100vh;
+   background-color: white;
+   padding: 0rem 5rem;
+   display: grid;
+   grid-template-rows: 1fr 1fr auto 1fr;
+   grid-row-gap: 1rem;
+
+   &-heading {
+      color: lighten($color: $content, $amount: 15%);
+      font-weight: 600;
+      font-size: 2.5rem;
+      letter-spacing: 0.03ch;
+      place-self: end start;
+   }
+
+   // START OF .main-section-cards
+   &-cards {
+      display: grid;
+      grid-template-columns: 3fr 1fr 1fr;
+      grid-column-gap: 1.5rem;
+      align-content: start;
+   }
+
+   .card {
+      color: white;
+      font-size: 0.7rem;
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      cursor: pointer;
+   }
+
+   .card-exam {
+      background-color: $primary;
+
+      p span {
+         font-size: 0.6rem;
+         letter-spacing: 0.2ch;
+         opacity: 80%;
+      }
+
+      p:nth-child(2) {
+         font-size: 2rem;
+         font-weight: 500;
+         margin-bottom: 0.4rem;
+      }
+
+      &-avatars {
+         width: 100%;
+         margin-top: 1rem;
+         position: relative;
+      }
+
+      img {
+         width: 1.7rem;
+         height: 1.7rem;
+         border: 2px solid white;
+         border-radius: 50%;
+      }
+
+      img:nth-child(2) {
+         transform: translateX(-0.7rem);
+      }
+      img:nth-child(3) {
+         transform: translateX(-1.4rem);
+      }
+
+      .avatar-span {
+         width: 1.8rem;
+         height: 1.8rem;
+         background-color: $secondary;
+         border: 2px solid white;
+         border-radius: 50%;
+         position: absolute;
+         transform: translate(3.5rem, -2rem);
+         @include flexManagement;
+      }
+
+      a {
+         color: white;
+         font-size: 0.8rem;
+         position: absolute;
+         transform: translate(16rem, -1.75rem);
+      }
+   }
+
+   .card-homework {
+      color: $secondary;
+      background-color: lighten($color: $secondary, $amount: 30%);
+
+      i {
+         font-size: 1.5rem;
+         margin: 0.5rem 0rem 2.2rem 0rem;
+      }
+
+      h3 {
+         font-weight: 600;
+         margin-bottom: 0.3rem;
+      }
+
+      p {
+         opacity: 90%;
+      }
+   }
+
+   .card-reading {
+      color: $primary;
+      background-color: lighten($color: $neumorph, $amount: 3%);
+
+      i {
+         font-size: 1.5rem;
+         margin: 0.5rem 0rem 2.2rem 0rem;
+      }
+
+      h3 {
+         font-weight: 600;
+         margin-bottom: 0.3rem;
+      }
+
+      p {
+         opacity: 90%;
+      }
+   }
+   // END OF .main-section-cards
+
+   &-progress {
+      border: 2px solid red;
+   }
+
+   &-info {
+      border: 2px solid red;
+   }
 }
 
 .side-section {
+   grid-area: aside;
    background-color: teal;
 }
