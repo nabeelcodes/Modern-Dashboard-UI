@@ -1,0 +1,23 @@
+{
+   "name": "modern-dashboard-ui",
+   "version": "1.0.0",
+   "description": "",
+   "main": "index.js",
+   "scripts": {
+      "sass": "node-sass -w scss/ -o dist/css --recursive"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/skorpionHyphenS/Modern-Dashboard-UI.git"
+   },
+   "keywords": [],
+   "author": "",
+   "license": "ISC",
+   "bugs": {
+      "url": "https://github.com/skorpionHyphenS/Modern-Dashboard-UI/issues"
+   },
+   "homepage": "https://github.com/skorpionHyphenS/Modern-Dashboard-UI#readme",
+   "devDependencies": {
+      "node-sass": "^6.0.0"
+   }
+}

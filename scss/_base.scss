@@ -1,0 +1,43 @@
+// google font
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap");
+
+// variables
+$primary: #4f2ab8;
+$secondary: #ff8941;
+$tertiary: #ff524b;
+$neumorph: #ecf0f3;
+
+// base styles
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: "Work Sans", sans-serif;
+   background-color: black;
+   color: black;
+}
+
+// mixins
+@mixin buttonStyles {
+   cursor: pointer;
+   border: none;
+   outline: none;
+}
+
+@mixin centering {
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   margin: auto;
+}
+
+@mixin flexManagement($direction: row, $jc: center, $ai: center) {
+   display: flex;
+   flex-direction: $direction;
+   justify-content: $jc;
+   align-items: $ai;
+}
