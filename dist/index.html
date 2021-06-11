@@ -3,6 +3,11 @@
    <head>
       <meta charset="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="robots" content="index,follow" />
+      <meta
+         name="description"
+         content="A simple and modern mockup of a generic Dashboard with a slight touch of Neumorphism using HTML, CSS + SASS and JavaScript"
+      />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <!-- FontAwesome -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" referrerpolicy="no-referrer" />
@@ -11,6 +16,27 @@
       <title>Modern-Dashboard-UI</title>
    </head>
    <body>
+      <!-- Main Container : grid container -->
+      <div id="main-container">
+         <!-- navbar : grid container -->
+         <nav class="navbar">
+            <!-- nav logo -->
+            <div class="navbar-logo"><p>P.</p></div>
+
+            <!-- nav buttons -->
+            <button class="navbar-button navbar-button-filter"><i class="fas fa-sliders-h"></i></button>
+            <button class="navbar-button navbar-button-dashboard current"><i class="fas fa-th-large"></i></button>
+            <button class="navbar-button navbar-button-profile"><i class="far fa-user"></i></button>
+            <button class="navbar-button navbar-button-stats"><i class="fas fa-chart-line"></i></button>
+         </nav>
+
+         <!-- main section -->
+         <main class="main-section"></main>
+
+         <!-- side-section -->
+         <aside class="side-section"></aside>
+      </div>
+
       <script src="index.js"></script>
    </body>
 </html>

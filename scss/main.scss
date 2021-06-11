@@ -1,1 +1,60 @@
 @import "base";
+
+#main-container {
+   width: 100vw;
+   height: 100vh;
+   display: grid;
+   grid-template-columns: 0.5fr 4fr 1.5fr;
+}
+
+.navbar {
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: repeat(8, 1fr);
+   place-items: center;
+   background-color: $neumorph;
+
+   &-logo {
+      width: 4rem;
+      height: 4rem;
+      grid-row: 1 / 3;
+      align-self: start;
+      margin-top: 2rem;
+      @include flexManagement;
+      border: 1px solid $neumorph;
+      border-radius: 7px;
+      box-shadow: 5px 5px 10px 3px #cbced1, -5px -5px 10px 3px #ffffff;
+
+      p {
+         font-weight: bold;
+         font-size: 2.75rem;
+         color: $secondary;
+      }
+   }
+
+   &-button {
+      @include buttonStyles;
+      font-size: 1rem;
+   }
+
+   &-button-filter {
+      grid-row: 3 / 4;
+   }
+   &-button-dashboard {
+      grid-row: 4 / 5;
+   }
+   &-button-profile {
+      grid-row: 5 / 6;
+   }
+   &-button-stats {
+      grid-row: 6 / 7;
+   }
+}
+
+.main-section {
+   background-color: coral;
+}
+
+.side-section {
+   background-color: teal;
+}

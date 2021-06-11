@@ -17,22 +17,18 @@ $neumorph: #ecf0f3;
 body {
    font-family: "Work Sans", sans-serif;
    background-color: black;
-   color: black;
 }
 
 // mixins
 @mixin buttonStyles {
+   width: 3rem;
+   height: 3rem;
+   color: gray;
+   background-color: $neumorph;
    cursor: pointer;
-   border: none;
    outline: none;
-}
-
-@mixin centering {
-   top: 0;
-   left: 0;
-   right: 0;
-   bottom: 0;
-   margin: auto;
+   border: none;
+   border-radius: 50%;
 }
 
 @mixin flexManagement($direction: row, $jc: center, $ai: center) {
@@ -40,4 +36,10 @@ body {
    flex-direction: $direction;
    justify-content: $jc;
    align-items: $ai;
+}
+
+// Utility class : .current
+.current {
+   border: 1px solid $neumorph;
+   box-shadow: inset 5px 5px 8px #cbced1, inset -5px -5px 8px #ffffff;
 }
