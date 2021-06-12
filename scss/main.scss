@@ -59,14 +59,15 @@
    background-color: white;
    padding: 0rem 5rem;
    display: grid;
-   grid-template-rows: 1fr 1fr auto 1fr;
-   grid-row-gap: 1rem;
+   grid-template-rows: 1fr 1fr auto 1fr 1fr;
+   grid-row-gap: 1.5rem;
 
    &-heading {
       color: lighten($color: $content, $amount: 15%);
       font-weight: 600;
       font-size: 2.5rem;
       letter-spacing: 0.03ch;
+      margin-top: 5rem;
       place-self: end start;
    }
 
@@ -74,16 +75,12 @@
    &-cards {
       display: grid;
       grid-template-columns: 3fr 1fr 1fr;
-      grid-column-gap: 1.5rem;
+      grid-column-gap: 1rem;
       align-content: start;
    }
 
    .card {
-      color: white;
-      font-size: 0.7rem;
-      padding: 1rem 1.5rem;
-      border-radius: 10px;
-      cursor: pointer;
+      @include cardStyles(white);
    }
 
    .card-exam {
@@ -136,7 +133,7 @@
          color: white;
          font-size: 0.8rem;
          position: absolute;
-         transform: translate(16rem, -1.75rem);
+         transform: translate(16rem, -1.5rem);
       }
    }
 
@@ -180,11 +177,129 @@
    // END OF .main-section-cards
 
    &-progress {
-      border: 2px solid red;
+      display: grid;
+      grid-template-columns: 1fr 1fr 0.25fr;
+      grid-column-gap: 1rem;
+      align-content: start;
+
+      .card {
+         @include cardStyles;
+      }
+
+      .card-info {
+         background-color: lighten($color: $neumorph, $amount: 3%);
+         border: 1px solid lighten($color: $neumorph, $amount: 3%);
+         box-shadow: 5px 5px 8px $shadow, -5px -5px 8px white;
+         position: relative;
+
+         p {
+            margin-top: 0.3rem;
+            font-size: 0.6rem;
+            font-weight: 500;
+            opacity: 40%;
+         }
+
+         .time {
+            position: absolute;
+            top: 10.8rem;
+            right: 1.5rem;
+         }
+
+         i {
+            position: absolute;
+            top: 1.3rem;
+            right: 1.5rem;
+            font-size: 0.8rem;
+         }
+      }
+
+      .card-info-inner {
+         position: relative;
+         background-color: $secondary;
+         @include cardStyles(white);
+         margin: 1rem 0rem;
+
+         p {
+            max-width: 70%;
+         }
+
+         i {
+            position: absolute;
+            right: 1.5rem;
+            top: 40%;
+         }
+      }
+
+      .card-progress {
+         background-color: white;
+
+         .spain-logo {
+            width: 3rem;
+            height: 2.5rem;
+            background-color: white;
+            padding: 0.45rem;
+            border-radius: 10px;
+
+            img {
+               width: 100%;
+               height: 100%;
+               border-radius: 7px;
+            }
+         }
+
+         p {
+            font-size: 2rem;
+            font-weight: 500;
+            line-height: 1.7ch;
+            margin: 1rem 0rem 2rem 0rem;
+         }
+
+         .progress-bar {
+            width: 75%;
+            height: 0.7rem;
+            margin-top: 0.5rem;
+            background-color: $secondary;
+            border-radius: 50px;
+         }
+      }
    }
 
    &-info {
-      border: 2px solid red;
+      display: grid;
+      grid-template-columns: 1fr 1fr 0.25fr;
+      grid-column-gap: 1rem;
+      align-content: start;
+
+      .card-grammar,
+      .card-dictionary {
+         @include cardStyles;
+         @include flexManagement(row, start, center);
+         border: 2px dotted darken($color: $neumorph, $amount: 10%);
+         position: relative;
+      }
+
+      .icon-container {
+         border: 2px solid red;
+         width: 2rem;
+         height: 2rem;
+         margin-right: 1rem;
+         border-radius: 50%;
+         border: 1px solid $neumorph;
+         box-shadow: 5px 5px 8px $shadow, -5px -5px 8px white;
+         @include flexManagement;
+      }
+
+      .text-container p {
+         margin-top: 0.3rem;
+         font-size: 0.6rem;
+         font-weight: 500;
+         opacity: 40%;
+      }
+
+      .fa-chevron-right {
+         position: absolute;
+         right: 1.5rem;
+      }
    }
 }
 

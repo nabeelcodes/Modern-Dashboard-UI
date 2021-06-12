@@ -40,6 +40,14 @@ body {
    align-items: $ai;
 }
 
+@mixin cardStyles($color: black) {
+   color: $color;
+   font-size: 0.7rem;
+   padding: 1rem 1.5rem;
+   border-radius: 10px;
+   cursor: pointer;
+}
+
 // Utility class : .current
 .current {
    border: 1px solid $neumorph;
