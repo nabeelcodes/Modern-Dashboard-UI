@@ -8,6 +8,17 @@ $tertiary: #ff524b;
 $neumorph: #ecf0f3;
 $shadow: #cbced1;
 $content: #16141f;
+$buttonGray: rgb(161, 160, 160);
+$dottedBorder: 2px dotted
+   darken(
+      $color: $neumorph,
+      $amount: 10%,
+   );
+$activeButton: darken(
+   $color: gray,
+   $amount: 10%,
+);
+$cardShadow: 5px 5px 5px $shadow, -5px -5px 5px white, inset -3px -3px 4px $shadow, inset 3px 3px 4px white;
 
 // base styles
 * {
@@ -21,35 +32,13 @@ body {
    background-color: black;
 }
 
-// mixins
-@mixin buttonStyles {
-   width: 3rem;
-   height: 3rem;
-   color: gray;
-   background-color: $neumorph;
-   cursor: pointer;
-   outline: none;
-   border: none;
-   border-radius: 50%;
+// adding hover to all cards
+.card,
+.box {
+   transition: transform 300ms ease-in-out;
 }
 
-@mixin flexManagement($direction: row, $jc: center, $ai: center) {
-   display: flex;
-   flex-direction: $direction;
-   justify-content: $jc;
-   align-items: $ai;
-}
-
-@mixin cardStyles($color: black) {
-   color: $color;
-   font-size: 0.7rem;
-   padding: 1rem 1.5rem;
-   border-radius: 10px;
-   cursor: pointer;
-}
-
-// Utility class : .current
-.current {
-   border: 1px solid $neumorph;
-   box-shadow: inset 5px 5px 8px $shadow, inset -5px -5px 8px white;
+.card:hover,
+.box:hover {
+   transform: translate(-0.2rem, -0.2rem);
 }

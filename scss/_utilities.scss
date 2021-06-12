@@ -1,0 +1,33 @@
+// mixins
+@mixin buttonStyles {
+   width: 2.7rem;
+   height: 2.7rem;
+   cursor: pointer;
+   outline: none;
+   border: none;
+   border-radius: 50%;
+   color: $buttonGray;
+   background-color: $neumorph;
+}
+
+@mixin cardStyles($color: black) {
+   color: $color;
+   font-size: 0.7rem;
+   padding: 0.7rem 1.5rem;
+   border-radius: 10px;
+   cursor: pointer;
+}
+
+@mixin flexManagement($direction: row, $jc: center, $ai: center) {
+   display: flex;
+   flex-direction: $direction;
+   justify-content: $jc;
+   align-items: $ai;
+}
+
+// Utility class : .current
+.current {
+   color: $activeButton !important;
+   border: 1px solid $neumorph;
+   box-shadow: inset 5px 5px 8px $shadow, inset -5px -5px 8px white, -3px -3px 4px $shadow, 3px 3px 4px white;
+}
