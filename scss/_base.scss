@@ -21,7 +21,9 @@ $activeButton: darken(
 $cardShadow: 5px 5px 5px $shadow, -5px -5px 5px white, inset -3px -3px 4px $shadow, inset 3px 3px 4px white;
 
 // base styles
-* {
+*,
+*::before,
+*::after {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
@@ -35,7 +37,7 @@ body {
 // adding hover to all cards
 .card,
 .box {
-   transition: transform 300ms ease-in-out;
+   transition: transform 200ms ease-in-out;
 }
 
 .card:hover,
